@@ -1,7 +1,7 @@
 # CNN vs Transformer robustness to corruption investigation
 
 ## Project Structure 
-
+```text
 CV_project/
 ├── datasets/
 │   ├── __init__.py
@@ -19,10 +19,10 @@ CV_project/
 │   ├── attention_utils.py
 │   └── gradcam_utils.py
 └── run_experiment.py
-
+```
 ### Base usage examples
 
-```
+```bash
 # DeiT-Tiny on clean CIFAR-10 (automatically resizes to 224x224 & runs Attention Rollout)
 python run_experiment.py --model deit_tiny --dataset cifar10
 
@@ -38,14 +38,14 @@ python run_experiment.py --model resnet18 --dataset cifar10_blurred
 ```
 
 ## Using custom image folder
-Some datasets are pytorch native, others need to be loaded according to that same format.
+Some datasets are pytorch native, using custom_folder.py we can create our own dataset from disk to load into our experiments.
 
-Class names and integer labels are inferred directly from folder structure 
+Class names and integer labels are inferred directly from folder structure (see below)
 
 ### Organize images on disk
 Note: Must use this folder structure exactly for inference to work
 
-
+```text
 CV_project/
 └── data/
     └── aircraft_vs_ships/
@@ -61,11 +61,11 @@ CV_project/
             │   └── test_01.jpg
             └── ship/
                 └── test_02.jpg
-
+```
 
 ### Usage examples
 
-```
+```bash
 # 1. Train & evaluate ResNet-18 on clean images
 python run_experiment.py \
   --model resnet18 \
