@@ -38,6 +38,24 @@ python run_experiment.py --model resnet18 --dataset cifar10_blurred
 
 ```
 
+### Full args list
+
+```python
+"--model", default="deit_tiny"
+"--dataset", default="cifar10"
+"--data-root", default="./data"
+"--output-dir", default="./outputs"
+"--epochs", type=int, default=20
+"--batch-size", type=int, default=None
+"--lr", type=float, default=None
+"--pretrained", action="store_true"
+"--blur", action="store_true"
+"--blur-kernel", type=int, default=5
+"--blur-sigma", type=float, default=2.0
+"--samples-per-class", type=int, default=2
+"--seed", type=int, default=42
+```
+
 ## Using custom image folder
 Some datasets are pytorch native, using custom_folder.py we can create our own dataset from disk to load into our experiments.
 
