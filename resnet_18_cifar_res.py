@@ -87,7 +87,7 @@ overall_acc = 100 * correct / total
 print(f"Test Accuracy: {overall_acc:.2f}%")
 
 # Save text results and formatted confusion matrix to file
-output_file = "accuracy_results.txt"
+output_file = "res_accuracy_results.txt"
 with open(output_file, "w") as f:
     f.write(f"Overall Test Accuracy: {overall_acc:.2f}% ({correct}/{total})\n")
     f.write("-" * 40 + "\n")
