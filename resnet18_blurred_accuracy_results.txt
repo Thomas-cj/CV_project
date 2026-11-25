@@ -1,0 +1,30 @@
+Model: ResNet-18 (Corrupted - Gaussian Blur)
+Overall Test Accuracy: 20.74% (2074/10000)
+----------------------------------------
+Per-Class Accuracy:
+  airplane    : 42.80% (428/1000)
+  automobile  : 2.10% (21/1000)
+  bird        : 27.00% (270/1000)
+  cat         : 86.80% (868/1000)
+  deer        : 1.20% (12/1000)
+  dog         : 17.50% (175/1000)
+  frog        : 0.40% (4/1000)
+  horse       : 1.00% (10/1000)
+  ship        : 28.50% (285/1000)
+  truck       : 0.10% (1/1000)
+
+===========================================================================
+Confusion Matrix (Rows = Actual, Columns = Predicted):
+
+Actual / Pred  airpla automo   bird    cat   deer    dog   frog  horse   ship  truck
+------------------------------------------------------------------------------------
+airplane          428      0     47    442      5     13      3      0     62      0
+automobile         32     21     46    719      2    125     42      1     12      0
+bird              136      0    270    540      0     40      8      0      6      0
+cat                36      0     50    868      0     46      0      0      0      0
+deer               21      0     85    766     12    110      3      0      3      0
+dog                45      0    118    662      0    175      0      0      0      0
+frog               11      0     64    817      0    104      4      0      0      0
+horse              21      0    221    553      7    187      0     10      1      0
+ship              191      0     18    478      0     26      2      0    285      0
+truck              50      2     69    679      0    170      6      1     22      1
