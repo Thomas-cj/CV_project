@@ -15,11 +15,14 @@ def main():
     p.add_argument("--batch-size", type=int, default=None)
     p.add_argument("--lr", type=float, default=None)
     p.add_argument("--pretrained", action="store_true")
+    p.add_argument("--blur", action="store_true")
+    p.add_argument("--blur-kernel", type=int, default=5)
+    p.add_argument("--blur-sigma", type=float, default=2.0)
     p.add_argument("--samples-per-class", type=int, default=2)
     p.add_argument("--seed", type=int, default=42)
     args = p.parse_args()
 
-    data_cfg = load_dataset_config(args.dataset, args.data_root, get_model_required_size(args.model))
+    data_cfg = load_dataset_config(args.dataset, args.data_root, get_model_required_size(args.model), blur=args.blur, kernel_size=args.blur_kernel, sigma=args.blur_sigma)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model_cfg = load_model_config(args.model, data_cfg.num_classes, data_cfg.image_size, args.pretrained, args.lr, args.epochs)
 
