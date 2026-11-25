@@ -21,6 +21,7 @@ CV_project/
 └── run_experiment.py
 ```
 ### Base usage examples
+All runs will default to use `--seed 42`, pretraining is possible using `--pretrained`, but only if comparing very small custom datasets, see **custom_folder** below.
 
 ```bash
 # DeiT-Tiny on clean CIFAR-10 (automatically resizes to 224x224 & runs Attention Rollout)
@@ -71,23 +72,21 @@ python run_experiment.py \
   --model resnet18 \
   --dataset custom_folder \
   --data-root ./data/aircraft_vs_ships \
-  --pretrained \
-  --epochs 15
+  --epochs 20
 
 # 2. Evaluate DeiT-Tiny on the same dataset
 python run_experiment.py \
   --model deit_tiny \
   --dataset custom_folder \
   --data-root ./data/aircraft_vs_ships \
-  --pretrained \
-  --epochs 15
+  --epochs 20
 
 # 3. Run with Gaussian blur corruption applied to the test set
 python run_experiment.py \
   --model deit_tiny \
   --dataset custom_folder \
   --data-root ./data/aircraft_vs_ships \
-  --pretrained \
+  --epochs 20 \
   --blur \
   --blur-kernel 5 \
   --blur-sigma 2.0
