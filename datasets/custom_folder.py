@@ -5,7 +5,7 @@ import torchvision.transforms as T
 from .base import DatasetConfig
 
 def get_dataset(data_root: str = "./data/my_dataset", image_size: Optional[int] = None, blur: bool = False, kernel_size: int = 5, sigma: float = 2.0, **kw) -> DatasetConfig:
-    mean, std, sz = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225), image_size or 224
+    mean, std, sz = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225), image_size or 224 # This is set for ImageNet, but needs to be calculated for whatever custom dataset we use
     norm = [T.ToTensor(), T.Normalize(mean, std)]
     blur_op = [T.GaussianBlur(kernel_size, sigma)] if blur else []
 
