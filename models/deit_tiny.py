@@ -1,7 +1,7 @@
 from typing import Optional
 import torch, timm
 from .base import ModelConfig
-from utils.attention_utils import extract_deit_attention_subset, plot_attention_grid
+from utils.legrad_utils import extract_deit_attention_subset, plot_attention_grid
 
 REQUIRED_IMAGE_SIZE = 224
 
