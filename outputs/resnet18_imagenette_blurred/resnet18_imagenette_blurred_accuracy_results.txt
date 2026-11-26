@@ -1,0 +1,30 @@
+Model: resnet18 | Dataset: imagenette_blurred
+Overall Test Accuracy: 68.03% (2670/3925)
+----------------------------------------
+Per-Class Accuracy:
+  tench       : 89.15% (345/387)
+  English springer: 87.59% (346/395)
+  cassette player: 88.80% (317/357)
+  chain saw   : 43.52% (168/386)
+  church      : 46.21% (189/409)
+  French horn : 72.59% (286/394)
+  garbage truck: 70.69% (275/389)
+  gas pump    : 34.37% (144/419)
+  golf ball   : 79.20% (316/399)
+  parachute   : 72.82% (284/390)
+
+===========================================================================
+Confusion Matrix (Rows = Actual, Columns = Predicted):
+
+Actual / Pred   tench Englis casset chain  church French garbag gas pu golf b parach
+------------------------------------------------------------------------------------
+tench             345     15      7      2      0      4      0      0     14      0
+English springer     12    346     10      6      1      9      0      0     11      0
+cassette player      4      3    317     10      0      7      3      3      8      2
+chain saw          69     77     33    168      1     18      1      0     14      5
+church             12     37     26     34    189     27     39      3     37      5
+French horn        25     32     21     14      0    286      2      2      9      3
+garbage truck      14     17     37     28      0      7    275      1      9      1
+gas pump            7      6    150     35      2     26     34    144     14      1
+golf ball          11     18     20     14      0      5      3      0    316     12
+parachute          15     12      7     27      1      3      2      1     38    284
